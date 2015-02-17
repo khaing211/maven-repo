@@ -8,18 +8,18 @@ http://coffeecoders.de/2011/09/using-github-as-a-personal-maven-repository/
 
 In pom.xml
 
-  <repositories>
-    <repository>
-        <id>ekito-public-releases</id>
-        <url>https://raw.github.com/khaing211/maven-repo/master/releases</url>
-    </repository>
-  </repositories>
+    <repositories>
+      <repository>
+          <id>khaing211-public-releases</id>
+          <url>https://raw.github.com/khaing211/maven-repo/master/releases</url>
+      </repository>
+    </repositories>
 
 In build.gradle
 
-  repositories {
-    maven {
-        url "http://repo.mycompany.com/maven2"
+    repositories {
+      maven {
+          url "https://raw.github.com/khaing211/maven-repo/master/releases"
+      }
     }
-  }
   
