@@ -48,3 +48,21 @@ And commit and push your changes to github:
     git push origin master
 
 ### build.gradle
+
+    uploadArchives {
+        repositories {
+            mavenDeployer {
+                repository(url: "file://path/to/local/git/maven-repo")
+            }
+        }
+    }
+
+Then deploy the files in your local repo
+    
+    gradle uploadArchives
+    
+POM generation, customization, etc.. please read
+http://gradle.org/docs/current/userguide/maven_plugin.html#uploading_to_maven_repositories
+    
+    
+        
