@@ -52,14 +52,14 @@ And commit and push your changes to github:
     uploadArchives {
         repositories {
             mavenDeployer {
-                repository(url: "file://path/to/local/git/maven-repo")
+                repository(url: "file://${localMavenRepo}")
             }
         }
     }
 
 Then deploy the files in your local repo
     
-    gradle uploadArchives
+    gradle -PlocalMavenRepo=/path/to/maven-repo uploadArchives
     
 POM generation, customization, etc.. please read
 http://gradle.org/docs/current/userguide/maven_plugin.html#uploading_to_maven_repositories
