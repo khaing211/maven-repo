@@ -58,12 +58,16 @@ And commit and push your changes to github:
     }
 
 Then deploy the files in your local repo
-    
+
     gradle -PlocalMavenRepo=/path/to/maven-repo uploadArchives
     
 POM generation, customization, etc.. please read
 http://gradle.org/docs/current/userguide/maven_plugin.html#uploading_to_maven_repositories
-    
+
+### Using maven-publish
+
+    gradle -PlocalMavenRepo=/path/to/maven-repo/releases publishToMavenLocal publish
+
 ### How to deploy existing/3rdparty jar without pom.xml
 
     mvn install:install-file -Dfile=/path/to/jar -DgroupId=alice.tuprolog -DartifactId=tuprolog -Dversion=3.0.1 -DlocalRepositoryPath=/path/to/local/repo -Dpackaging=jar -DgeneratePom=true -DcreateChecksum=true
